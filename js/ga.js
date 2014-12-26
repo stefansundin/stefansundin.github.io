@@ -6,3 +6,13 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-6797859-18', 'auto');
 ga('require', 'displayfeatures');
 ga('send', 'pageview');
+
+
+function trackLink(e) {
+  ga('send', 'event', 'button', 'click', this.href);
+}
+
+var links = document.querySelectorAll('[track]');
+for (var i=0; i < links.length; i++) {
+  links[i].addEventListener('click', trackLink);
+}
