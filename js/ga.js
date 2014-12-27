@@ -9,10 +9,14 @@ ga('send', 'pageview');
 
 
 function trackLink(e) {
-  ga('send', 'event', 'button', 'click', this.href);
+  var category = this.getAttribute('track');
+  if (!category) {
+    category = 'link';
+  }
+  ga('send', 'event', category, 'click', this.href);
 }
 
-var links = document.querySelectorAll('[track]');
+var links = document.getElementsByTagName('a');
 for (var i=0; i < links.length; i++) {
   links[i].addEventListener('click', trackLink);
 }
