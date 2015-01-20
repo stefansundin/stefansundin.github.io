@@ -20,3 +20,23 @@ var links = document.getElementsByTagName('a');
 for (var i=0; i < links.length; i++) {
   links[i].addEventListener('click', trackLink);
 }
+
+function trackForm(e) {
+  var category = this.getAttribute('track');
+  if (!category) {
+    category = 'form';
+  }
+  var params = {};
+  var inputs = this.getElementsByTagName('input');
+  for (var i=0; i < inputs.length; i++) {
+    if (inputs[i].name) {
+      params[inputs[i].name] = inputs[i].value;
+    }
+  }
+  ga('send', 'event', category, 'click', this.action, params);
+}
+
+var forms = document.getElementsByTagName('form');
+for (var i=0; i < forms.length; i++) {
+  forms[i].addEventListener('submit', trackForm);
+}
