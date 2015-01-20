@@ -47,12 +47,17 @@ h2 {
 .buttons {
   margin-top: 40px;
   text-align: center;
+  padding: 10px 0;
 }
 
 .buttons .btn {
-  margin: 10px 3px;
+  margin: 0 3px;
 }
 
 body {
   margin-bottom: 100px;
+}
+
+input:invalid {
+  background-color: orange;
 }
