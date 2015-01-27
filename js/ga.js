@@ -26,14 +26,14 @@ function trackForm(e) {
   if (!category) {
     category = 'form';
   }
-  var params = {};
+  var label = this.action;
   var inputs = this.getElementsByTagName('input');
   for (var i=0; i < inputs.length; i++) {
-    if (inputs[i].name) {
-      params[inputs[i].name] = inputs[i].value;
+    if (inputs[i].name && inputs[i].type != 'hidden') {
+      label += ' '+inputs[i].name+'='+inputs[i].value;
     }
   }
-  ga('send', 'event', category, 'click', this.action, params);
+  ga('send', 'event', category, 'click', label);
 }
 
 var forms = document.getElementsByTagName('form');
