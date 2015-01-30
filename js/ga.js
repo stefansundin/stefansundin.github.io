@@ -3,8 +3,16 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-6797859-18', 'auto');
-ga('require', 'displayfeatures');
+
+var domains = ['stefansundin.github.io', 'gh-rss.herokuapp.com'];
+var i = domains.indexOf(window.location.hostname);
+if (i !== -1) {
+  domains.splice(i, 1);
+}
+
+ga('create', 'UA-6797859-18', 'auto', {'allowLinker': true});
+ga('require', 'linker');
+ga('linker:autoLink', domains);
 ga('send', 'pageview');
 
 
