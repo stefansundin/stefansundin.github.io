@@ -45,6 +45,10 @@ h2 {
   padding-bottom: 0.125em;
 }
 
+*[monospace] {
+  font-family: monospace;
+}
+
 input:invalid {
   background-color: orange;
 }
