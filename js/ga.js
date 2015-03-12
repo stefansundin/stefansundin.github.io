@@ -5,15 +5,9 @@ if (window.location.protocol != "file:") {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 }
 
-var domains = ['stefansundin.github.io', 'gh-rss.herokuapp.com'];
-var i = domains.indexOf(window.location.hostname);
-if (i !== -1) {
-  domains.splice(i, 1);
-}
+var gaid = document.body.getAttribute('ga') || 'UA-6797859-18';
 
-ga('create', 'UA-6797859-18', 'auto', {'allowLinker': true});
-ga('require', 'linker');
-ga('linker:autoLink', domains);
+ga('create', gaid, 'auto');
 ga('send', 'pageview');
 
 
