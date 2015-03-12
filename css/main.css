@@ -45,6 +45,10 @@ h2 {
   padding-bottom: 0.125em;
 }
 
+a {
+  cursor: pointer;
+}
+
 *[monospace] {
   font-family: monospace;
 }
@@ -73,4 +77,8 @@ form.topbar {
 .share {
   text-align: center;
   margin: 80px 0 45px;
+}
+
+.expander {
+  display: none;
 }
