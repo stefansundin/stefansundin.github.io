@@ -4,3 +4,5 @@
 /elevatedstartup
 /youtube-copy-annotations
 Thumbs.db
+.DS_Store
+*.swp

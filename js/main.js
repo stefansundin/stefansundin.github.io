@@ -1,6 +1,6 @@
 var a = document.querySelectorAll('.expander');
 for (var i=0; i < a.length; i++) {
-  a[i].style.display = 'block';
+  a[i].style.display = 'inline-block';
   a[i].addEventListener('click', function(){
     var id = this.getAttribute('expand');
     document.getElementById(id).style.display = 'block';
