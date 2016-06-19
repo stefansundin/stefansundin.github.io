@@ -5,7 +5,7 @@ if (window.location.protocol != "file:") {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 }
 
-var gaid = document.body.getAttribute('ga') || 'UA-6797859-18';
+var gaid = document.body.getAttribute('ga') || (window.location.hostname == 'stefansundin.github.io' ? 'UA-6797859-18' : '');
 
 ga('create', gaid, 'auto');
 ga('send', 'pageview');
