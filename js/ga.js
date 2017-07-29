@@ -1,15 +1,22 @@
+
 if (window.location.protocol != "file:") {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments);
+    };
+    i[r].l = 1 * new Date();
+    var a = s.createElement(o);
+    var m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 }
 
 var gaid = document.body.getAttribute('ga') || (window.location.hostname == 'stefansundin.github.io' ? 'UA-6797859-18' : '');
-
 ga('create', gaid, 'auto');
 ga('send', 'pageview');
-
 
 function trackLink(e) {
   var category = this.getAttribute('track');
@@ -26,7 +33,8 @@ function trackLink(e) {
 
 var links = document.getElementsByTagName('a');
 for (var i=0; i < links.length; i++) {
-  links[i].addEventListener('click', trackLink);
+  var link = links[i];
+  link.addEventListener('click', trackLink);
 }
 
 function trackForm(e) {
@@ -37,14 +45,16 @@ function trackForm(e) {
   var label = this.action;
   var inputs = this.getElementsByTagName('input');
   for (var i=0; i < inputs.length; i++) {
-    if (inputs[i].name && inputs[i].type != 'hidden') {
-      label += ' '+inputs[i].name+'='+inputs[i].value;
+    var input = inputs[i];
+    if (input.name && input.type != 'hidden') {
+      label += ` ${input.name}=${input.value}`;
     }
   }
   ga('send', 'event', category, 'click', label);
-}
+};
 
 var forms = document.getElementsByTagName('form');
 for (var i=0; i < forms.length; i++) {
-  forms[i].addEventListener('submit', trackForm);
+  var form = forms[i];
+  form.addEventListener('submit', trackForm);
 }
