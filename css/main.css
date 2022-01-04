@@ -1,27 +1,20 @@
 
-@media (prefers-color-scheme:dark) {
-	/* When system is on Dark Mode */
-    :root {
-        --color-bg: #141414; /* Background color */
-        --color-fg: #f8f8f8; /* Text color */
-        --color-url: #7ecbff; /* URL color */
-		color-scheme: dark; /* Dark scrollbar */
-    }
-}
-
-@media (prefers-color-scheme:light) {
-    :root {
-        --color-bg: #ffffff; /* Background color */
-        --color-fg: #333; /* Text color */
-        --color-url: #337ab7; /* URL color */
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    color: #f8f8f8;
+    background-color: #141414;
+  }
+  a {
+    color: #7ecbff;
+  }
 }
 
 body {
   padding: 0 15px;
   margin-bottom: 100px;
-  color: var(--color-fg); /* Set text color to variable */
-  background-color: var(--color-bg); /* Set bg color to variable */
 }
 
 .container {
@@ -67,7 +60,6 @@ h2 {
 
 a {
   cursor: pointer;
-  color: var(--color-url); /* Set URL color to variable */
 }
 
 *[monospace] {
@@ -82,7 +74,6 @@ input:invalid {
   margin: 2em auto 0;
   text-align: center;
 }
-
 .buttons .btn {
   margin: 4px 3px;
 }
@@ -90,7 +81,6 @@ input:invalid {
 .form-inline {
   margin-bottom: 15px;
 }
-
 .form-inline .input-group {
   margin-right: 5px;
 }
@@ -103,4 +93,3 @@ input:invalid {
 .expander {
   display: none;
 }
-
