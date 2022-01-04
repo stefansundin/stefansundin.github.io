@@ -1,4 +1,17 @@
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    color: #f8f8f8;
+    background-color: #141414;
+  }
+  a {
+    color: #7ecbff;
+  }
+}
+
 body {
   padding: 0 15px;
   margin-bottom: 100px;
