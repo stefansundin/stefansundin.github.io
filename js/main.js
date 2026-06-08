@@ -1,36 +1,47 @@
-document.querySelectorAll(".javascript").forEach(function(el) {
-  el.classList.remove("javascript");
-});
+document.addEventListener('DOMContentLoaded', function () {
+  // Pass theme=dark in the query string to force dark mode
+  const theme = window.location.search.substring(1).split('&').find(v => v.startsWith('theme='))?.split('=')?.[1];
+  if (theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  } else {
+    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-bs-theme', darkMode ? 'dark' : 'light');
 
-document.querySelectorAll(".expander").forEach(function(a) {
-  a.style.display = "inline-block";
-  a.addEventListener("click", function() {
-    const id = this.getAttribute("expand");
-    document.getElementById(id).style.display = "block";
-    this.style.display = "none";
-  });
-  const id = a.getAttribute("expand");
-  document.getElementById(id).style.display = "none";
-});
-
-document.querySelectorAll('form[action="https://www.paypal.com/cgi-bin/webscr"]').forEach(function(form) {
-  form.addEventListener("submit", function(e) {
-    if (parseInt(this.amount.value) < 1) {
-      e.preventDefault();
-      alert("The minimum donation amount is one dollar. Anything less than one dollar and you're just giving PayPal everything because of their fees.\n\nIf you can't afford one dollar, then please donate to a local charity instead.");
-      return false;
-    }
-  });
-});
-
-document.querySelectorAll("a[fubar]").forEach(function(a) {
-  if (a.href != "") {
-    return;
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      document.documentElement.setAttribute('data-bs-theme', e.matches ? 'dark' : 'light');
+    });
   }
-  a.textContent = a.textContent.replace(/[A-Z]{2}/, function(c) {
-    return (c[0] + "@" + c[1]).toLowerCase();
-  }).replace(/[A-Z]/g, function(c) {
-    return "." + c.toLowerCase();
-  });
-  a.href = "mailto:" + a.textContent;
+
+  for (const link of document.querySelectorAll('.expander')) {
+    link.style.display = 'inline-block';
+    link.addEventListener('click', function () {
+      const id = this.getAttribute('expand');
+      document.getElementById(id).style.display = 'block';
+      this.style.display = 'none';
+    });
+    const id = link.getAttribute('expand');
+    document.getElementById(id).style.display = 'none';
+  }
+
+  for (const form of document.querySelectorAll('form[action="https://www.paypal.com/cgi-bin/webscr"]')) {
+    form.addEventListener('submit', function (e) {
+      if (parseInt(this.amount.value) < 1) {
+        e.preventDefault();
+        alert("The minimum donation amount is one dollar. Anything less than one dollar and you're just giving PayPal everything because of their fees.");
+        return false;
+      }
+    });
+  }
+
+  for (const link of document.querySelectorAll('a[fubar]')) {
+    if (link.href !== '') {
+      return;
+    }
+    link.textContent = link.textContent.replace(/[A-Z]{2}/, function (c) {
+      return `${c[0]}@${c[1]}`.toLowerCase();
+    }).replace(/[A-Z]/g, function (c) {
+      return `.${c.toLowerCase()}`;
+    });
+    link.href = `mailto:${link.textContent}`;
+  }
 });
