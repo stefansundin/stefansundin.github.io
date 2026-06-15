@@ -90,40 +90,56 @@
     </ul>
 
 
-    <h2 id="donate">Donate</h2>
+    <h2 id="donate">Support My Open Source Work</h2>
 
-    <p>If you find my software useful, please make a donation. I really appreciate any support!</p>
+    <p>If my software has saved you time, solved a problem, or become part of your workflow, please consider supporting my work. Every contribution helps me spend more time maintaining and improving the tools you use.</p>
 
-    <form method="post" action="https://www.paypal.com/cgi-bin/webscr" track="donate" target="_blank" class="row g-3 mb-3">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="KYMVEK692RF5Q">
-      <input type="hidden" name="item_name" value="GitHub Page">
-      <input type="hidden" name="item_number" value="GitHub Page">
-      <input type="hidden" name="no_shipping" value="1">
-      <input type="hidden" name="return" value="https://stefansundin.github.io/thx">
-      <input type="hidden" name="cbt" value="Learn why you just became awesome">
-      <div class="col-sm-3">
-        <div class="input-group">
-          <span class="input-group-text"><label for="donation_amount">$</label></span>
-          <input type="hidden" name="currency_code" value="USD">
-          <input class="form-control" type="text" id="donation_amount" name="amount" value="5.00" pattern="\d+\.?\d*" placeholder="Amount" spellcheck="false">
-        </div>
-      </div>
-      <div class="col">
-        <input class="btn btn-success" type="submit" value="Donate with PayPal">
-      </div>
-    </form>
-
-    <p>You can also support me through <a target="_blank" href="https://github.com/sponsors/stefansundin">GitHub Sponsorship</a> (there are perks), or through <a target="_blank" href="https://www.patreon.com/stefansundin">Patreon</a>.</p>
-
-    <p><small><a class="expander" expand="donation-options">Show other donation options: Bitcoin.</a></small></p>
-    <div id="donation-options">
-      <p>Other donation options:</p>
-      <ul>
-        <li>Bitcoin: <tt>1EhDUbc5MjC6JavC6idKiTCxnqSxY2sbTX</tt> (<a href="../img/btc-qr.png">QR code</a>)</li>
-      </ul>
-      <p>Contact me at <a fubar>stefaNStefansundinCom</a> if none of the above work.</p>
+    <div class="alert alert-primary mb-4" role="alert">
+      <h3 class="h5 mb-2">Donor Perk: Private Discord Access</h3>
+      <p class="mb-0">Donate a total of <strong>$25 or more</strong> and you can join my private Discord server to chat with me and other users. It does <strong>not</strong> have to be $25 per month: a one-time donation or smaller donations that add up to $25 both qualify.</p>
     </div>
+
+    <section class="mb-5" aria-labelledby="github-sponsors">
+      <h3 id="github-sponsors">1. GitHub Sponsors (Recommended)</h3>
+      <p>GitHub Sponsors is the best way to support my work because GitHub does not charge fees, so your entire contribution reaches me.</p>
+      <p><small>If you need direct, private support by email, the <strong>$50 monthly tier</strong> includes it.</small></p>
+      <p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://github.com/sponsors/stefansundin">Support on GitHub Sponsors</a></p>
+    </section>
+
+    <section class="mb-5" aria-labelledby="paypal">
+      <h3 id="paypal">2. PayPal</h3>
+      <p>Prefer to make a one-time donation? PayPal is a quick and easy option.</p>
+
+      <form method="post" action="https://www.paypal.com/cgi-bin/webscr" track="donate" target="_blank" class="row g-3 mb-2">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="KYMVEK692RF5Q">
+        <input type="hidden" name="item_name" value="Donate Page">
+        <input type="hidden" name="item_number" value="Donate Page">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="hidden" name="return" value="https://stefansundin.github.io/thx">
+        <input type="hidden" name="cbt" value="Learn why you just became awesome">
+        <div class="col-sm-3">
+          <div class="input-group">
+            <span class="input-group-text"><label for="donation_amount">$</label></span>
+            <input type="hidden" name="currency_code" value="USD">
+            <input class="form-control" type="number" id="donation_amount" name="amount" value="25.00" min="1" step="0.01" inputmode="decimal" placeholder="Amount">
+          </div>
+        </div>
+        <div class="col">
+          <input class="btn btn-success" type="submit" value="Donate with PayPal">
+        </div>
+      </form>
+    </section>
+
+    <section class="mb-5" aria-labelledby="patreon">
+      <h3 id="patreon">3. Patreon</h3>
+      <p>If you already use Patreon or prefer recurring support there, you can become a patron.</p>
+      <p><a class="btn btn-danger" target="_blank" rel="noopener" href="https://www.patreon.com/stefansundin">Support on Patreon</a></p>
+    </section>
+
+    <p>Have questions? <a href="donate/">View the full FAQ and donation information</a>.</p>
+
+    <p class="mb-5">Thank you for supporting independent open source software.</p>
   </div>
 
   <script src="js/main.js"></script>
