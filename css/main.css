@@ -30,7 +30,3 @@ a {
 input:invalid {
   border-color: red;
 }
-
-.expander {
-  display: none;
-}

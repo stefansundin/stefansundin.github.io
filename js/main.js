@@ -12,17 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  for (const link of document.querySelectorAll('.expander')) {
-    link.style.display = 'inline-block';
-    link.addEventListener('click', function () {
-      const id = this.getAttribute('expand');
-      document.getElementById(id).style.display = 'block';
-      this.style.display = 'none';
-    });
-    const id = link.getAttribute('expand');
-    document.getElementById(id).style.display = 'none';
-  }
-
   for (const form of document.querySelectorAll('form[action="https://www.paypal.com/cgi-bin/webscr"]')) {
     form.addEventListener('submit', function (e) {
       if (parseInt(this.amount.value) < 1) {
